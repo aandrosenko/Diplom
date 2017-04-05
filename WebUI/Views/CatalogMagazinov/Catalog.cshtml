@@ -1,0 +1,20 @@
+﻿@using Domain.Entities
+@model IEnumerable<CatalogMagazinov>
+
+@{
+    ViewBag.Title = "Каталог магазинов";
+}
+
+
+<div>
+    @foreach (CatalogMagazinov catalog in Model)
+    {
+        <ul>
+            <li>@catalog.Name</li>
+        </ul>
+    }
+</div>
+
+
+
+
