@@ -6,8 +6,12 @@ namespace Domain.Entities
     public class EventInfo
     {
         public int EventInfoId { get; set; }
-        public string Text { get; set; }                
-        public DateTime DateTimeBegin { get; set; }   
+        public string Title { get; set; }
+        public string ShortDescription { get; set; }
+        public string LongDescription { get; set; }
+        public string LogoUrl { get; set; }           
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public int ShopInfoId { get; set; }
         public ShopInfo Shop { get; set; }
 

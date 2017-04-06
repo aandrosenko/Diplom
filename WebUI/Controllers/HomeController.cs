@@ -23,7 +23,7 @@ namespace WebUI.Controllers
             {
                 EventInfos = _unitOfWork.GetGenericRepository<EventInfo>()
                                         .GetAll()
-                                        .OrderByDescending(t => t.DateTimeBegin)
+                                        .OrderByDescending(t => t.StartDate)
                                         .Skip((page - 1) * pageSize)
                                         .Take(pageSize),
                 PagingInfo = new PagingInfo
