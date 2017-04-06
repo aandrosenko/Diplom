@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Domain
 {
@@ -10,6 +11,21 @@ namespace Domain
 
         public DbSet<EventInfo> EventInfos { get; set; }
         public DbSet<ShopInfo> ShopInfos { get; set; }
-        public DbSet<User> Users { get; set; } 
+        public DbSet<User> Users { get; set; }
+        public DbSet<EventReview> EventReviews { get; set; }
+        public DbSet<ShopReview> ShopReviews { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ShopInfo>()
+                        .HasRequired(c => c.Owner)
+                        .WithMany()
+                        .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ShopReview>()
+                .HasRequired(s => s.User)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+        }
     }
 }
