@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using Domain;
 using Domain.Abstract;
+using WebUI.Helpers;
 
 namespace WebUI.Infrastructure
 {
@@ -19,7 +20,8 @@ namespace WebUI.Infrastructure
 
         private void AddBindings()
         {
-            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            var unitOfWork = _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            _kernel.Bind<IUserHelper>().To<UserHelper>().WithConstructorArgument("unitOfWork", unitOfWork);
         }
 
         public object GetService(Type serviceType)

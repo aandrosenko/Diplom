@@ -32,6 +32,11 @@ namespace WebUI.App_Start
         {
             bootstrapper.ShutDown();
         }
+
+        public static T Get<T>() where T:class
+        {
+            return bootstrapper.Kernel?.Get<T>();
+        }
         
         /// <summary>
         /// Creates the kernel that will manage your application.

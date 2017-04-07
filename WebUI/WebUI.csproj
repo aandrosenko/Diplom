@@ -140,11 +140,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\ContextManager.cs" />
+    <Compile Include="Context\IContextManager.cs" />
+    <Compile Include="Context\IUserContext.cs" />
+    <Compile Include="Context\UserContext.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\IUserHelper.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="HtmlHelpers\PagingHelper.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\PagingInfo.cs" />
