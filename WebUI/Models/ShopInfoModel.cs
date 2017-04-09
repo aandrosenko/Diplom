@@ -7,6 +7,8 @@ namespace WebUI.Models
     {
         public IEnumerable<EventInfo> EventInfos { get; set; }
 
+        public IEnumerable<ShopInfo> ShopInfoes { get; set; }
+
         public PagingInfo PagingInfo { get; set; }
     }
 }

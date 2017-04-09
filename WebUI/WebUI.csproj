@@ -220,6 +220,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Catalog.cshtml" />
     <Content Include="Views\CatalogMagazinov\Catalog.cshtml" />
+    <Content Include="Views\Shop\Shops.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

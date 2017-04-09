@@ -23,3 +23,9 @@ textarea {
     max-width: 280px;
 }
 
+.catalog-list {
+    -ms-column-count: 4;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+}
