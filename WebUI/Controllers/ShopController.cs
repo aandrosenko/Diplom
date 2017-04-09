@@ -37,7 +37,8 @@ namespace WebUI.Controllers
 
         public ViewResult Shops(int page = 1)
         {
-             ShopInfoModel model = new ShopInfoModel
+            
+            ShopInfoModel model = new ShopInfoModel
             {
                 ShopInfoes = _unitOfWork.GetGenericRepository<ShopInfo>()
                                         .GetAll()
