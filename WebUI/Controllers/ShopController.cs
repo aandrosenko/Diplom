@@ -36,17 +36,24 @@ namespace WebUI.Controllers
         }
 
         public ViewResult Shops(int page = 1)
-        {
-            
+        {            
             ShopInfoModel model = new ShopInfoModel
             {
                 ShopInfoes = _unitOfWork.GetGenericRepository<ShopInfo>()
                                         .GetAll()
-                                        .OrderByDescending(t => t.Name)                                     
-               
+                                        .OrderByDescending(t => t.Name)                                             
             };
-
             return View(model);
         }
+
+
+        public ActionResult ShopDescription(int itemId)
+        {
+            var Item = _unitOfWork.GetGenericRepository<ShopInfo>()
+                                    .GetAll()
+                                    .FirstOrDefault(x => x.ShopInfoId == itemId);            
+            return View(Item);
+        }
+
     }
 }

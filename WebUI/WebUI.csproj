@@ -222,6 +222,8 @@
     <Content Include="Views\Home\Catalog.cshtml" />
     <Content Include="Views\CatalogMagazinov\Catalog.cshtml" />
     <Content Include="Views\Shop\Shops.cshtml" />
+    <Content Include="Views\Shop\ShopDescription.cshtml" />
+    <Content Include="Views\Home\AboutEvent.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

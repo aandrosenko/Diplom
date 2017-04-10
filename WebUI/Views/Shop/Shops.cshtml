@@ -1,0 +1,17 @@
+﻿@using WebUI.Models
+@model ShopInfoModel
+
+
+@{
+    ViewBag.Title = "Каталог магазинов";
+}
+
+
+<div class="catalog-list">
+    @foreach (var shop in Model.ShopInfoes)
+    {
+        <div>
+            <a href="@Url.Action("ShopDescription", "Shop", new { itemId = shop.ShopInfoId })">@shop.Name</a>
+        </div>
+    }
+</div>

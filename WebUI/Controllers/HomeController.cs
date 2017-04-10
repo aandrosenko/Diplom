@@ -43,7 +43,16 @@ namespace WebUI.Controllers
             return View(model);
         }
 
-        
+        public ActionResult AboutEvent(int itemId)
+        {
+            var Item = _unitOfWork.GetGenericRepository<EventInfo>()
+                                   .GetAll()
+                                   .FirstOrDefault(x => x.EventInfoId == itemId);
+            return View(Item);
+        }
+
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
