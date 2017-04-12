@@ -20,8 +20,8 @@ namespace WebUI.Infrastructure
 
         private void AddBindings()
         {
-            var unitOfWork = _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
-            _kernel.Bind<IUserHelper>().To<UserHelper>().WithConstructorArgument("unitOfWork", unitOfWork);
+            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            _kernel.Bind<IUserHelper>().To<UserHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
         }
 
         public object GetService(Type serviceType)

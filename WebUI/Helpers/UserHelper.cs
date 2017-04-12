@@ -12,6 +12,7 @@ namespace WebUI.Helpers
         {
             _unitOfWork = unitOfWork;
         }
+
         public User GetUserByEmail(string email)
         {
             return _unitOfWork.GetGenericRepository<User>().GetAll().FirstOrDefault(u => u.Email.Equals(email));

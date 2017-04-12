@@ -1,11 +1,7 @@
 ﻿using Domain.Entities;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web.Configuration;
 using System.Web.Mvc;
-using System.Web.Security;
 using Domain.Abstract;
-using WebUI.Context;
 using WebUI.Models;
 
 namespace WebUI.Controllers
@@ -19,9 +15,6 @@ namespace WebUI.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-
-        /*            FormsAuthentication.SetAuthCookie("", true);
-            UserContext.Refresh();*/
 
         public ViewResult Index(int page = 1)
         {

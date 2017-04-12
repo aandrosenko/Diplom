@@ -1,6 +1,5 @@
 ﻿using System.Web;
 using Domain.Entities;
-using Ninject.Web.Common;
 using WebUI.App_Start;
 using WebUI.Helpers;
 
@@ -27,7 +26,6 @@ namespace WebUI.Context
     {
         private User currentUser; 
         private bool userInitialized = false;
-        public string UserFullName { get; private set; }
 
         public User CurrentUser
         {
@@ -40,14 +38,8 @@ namespace WebUI.Context
                 }
 
                 var token = HttpContext.Current.User.Identity.Name;
-                this.currentUser = NinjectWebCommon.Get<UserHelper>().GetUserByEmail(token);
+                this.currentUser = NinjectWebCommon.Get<IUserHelper>().GetUserByEmail(token);
                 userInitialized = true;
-                if (currentUser != null)
-                {
-                    UserFullName = currentUser.IsAdmin
-                        ? $"{currentUser.LastName} {currentUser.FirstName} (Admin)"
-                        : $"{currentUser.LastName} {currentUser.FirstName}";
-                }
 
                 return this.currentUser;
             }
