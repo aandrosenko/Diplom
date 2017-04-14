@@ -1,22 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using WebUI.Attributes;
+using WebUI.Properties;
 
 namespace WebUI.Models
 {
     public class LoginViewModel
     {
-        private const string EmailErrorMessage = "Пожалуйста введите свой почтовый адрес";
-        private const string PasswordErrorMessage = "Пожалуйста введите пароль";
-        private const string ValidateUserErrorMessage = "Неправильный почтовый адрес или пароль";
-
-        [Required(ErrorMessage = EmailErrorMessage)]
-        [EmailAddress(ErrorMessage =  EmailErrorMessage)]
+        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "EmailErrorMessage")]
+        [EmailAddress(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "EmailErrorMessage")]
+        [Display(Name="Е-мейл")]
         public string Email { get; set; }
-        [Required(ErrorMessage = PasswordErrorMessage)]
+
+        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "PasswordErrorMessage")]
         [DataType(DataType.Password)]
-        [ValidateUser(nameof(Email), nameof(Password), ErrorMessage = ValidateUserErrorMessage)]
+        [ValidateUser(nameof(Email), nameof(Password), ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "ValidateUserErrorMessage")]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
+
+        [Display(Name = "Запомнить меня")]
         public bool RememberMe { get; set; }
+
         public string ReturnUrl { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Domain.Abstract;
+﻿using System.Linq.Expressions;
+using Domain.Abstract;
 using Domain.Repositories;
 
 namespace Domain
@@ -14,6 +15,14 @@ namespace Domain
         public GenericRepository<T> GetGenericRepository<T>() where T : class 
         {
             return new GenericRepository<T>(_dbContext);
+        }
+
+        public TRepository GetRepository<TRepository>() where TRepository : BaseRepository, new()
+        {
+            var repository = new TRepository();
+            repository.Init(_dbContext);
+
+            return repository;
         }
     }
 }

@@ -30,7 +30,6 @@ namespace WebUI.Controllers
             {
                 FormsAuthentication.SetAuthCookie(model.Email, model.RememberMe);
                 UserContext.Refresh();
-                var x = UserContext.Current.CurrentUser;
 
                 if (!string.IsNullOrEmpty(returnUrl))
                 {
@@ -51,6 +50,26 @@ namespace WebUI.Controllers
             Session.Abandon();
 
             return RedirectToAction("Login");
+        }
+
+        public ActionResult Register()
+        {
+            var model = new RegisterViewModel();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _userHelper.CreateUser(model);
+
+               return RedirectToAction("Login", "Account");
+            }
+
+            return View(model);
         }
     }
 }

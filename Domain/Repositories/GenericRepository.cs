@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Domain.Abstract;
 
 namespace Domain.Repositories
 {
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : BaseRepository, IRepository<T> where T : class
     {
-        private readonly EFDbContext _dbContext;
-        private readonly DbSet<T> _dbSet;
-
+        private EFDbContext _dbContext;
+        private DbSet<T> _dbSet;
+        protected GenericRepository()
+        {
+        }
         internal GenericRepository(EFDbContext context)
         {
-            _dbContext = context;
-            _dbSet = _dbContext.Set<T>();
+            Init(context);
         }
         
         public IQueryable<T> GetAll()
@@ -54,6 +54,12 @@ namespace Domain.Repositories
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+        }
+
+        public override void Init(EFDbContext context)
+        {
+            _dbContext = context;
+            _dbSet = _dbContext.Set<T>();
         }
     }
 }
