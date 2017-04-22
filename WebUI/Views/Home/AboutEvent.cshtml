@@ -1,8 +1,18 @@
 ﻿@model Domain.Entities.EventInfo
 
+<div class="row">
+    <div class="col-md-5"><img src="@Model.LogoUrl" alt="" class="img-responsive"></div>
+    <div class="col-md-4"><h2>@Model.Title</h2></div>
+    <div class="col-md-3"><h4 class="text-center">Дата проведения:<b><br>@Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</b></h4></div>
+</div>
 
-<h1>
-    @Model.LongDescription
-</h1>
-<h1>Добавить страницу опиания скидки</h1>
+
+<div class="row">
+    <div class="col-md-12"><p class="lead text-center">@Model.ShortDescription</p></div>
+    <div class="col-md-12"><p class="text-justify">@Model.LongDescription</p></div>
+</div>
+
+
+<h2>Сюда можно список адресов магазина</h2>
+
 

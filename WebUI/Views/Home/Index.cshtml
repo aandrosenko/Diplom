@@ -11,7 +11,7 @@
     @foreach (var preview in Model.EventInfos)
     {
         <div class="col-md-4">
-            <a href="@Url.Action("AboutEvent", "Home", new { itemId = preview.EventInfoId })" class="thumbnail"><img src="@preview.LogoUrl" alt="" /></a>
+            <a href="@Url.Action("AboutEvent", "Home", new { itemId = preview.EventInfoId })" class="thumbnail"><img src="@preview.LogoUrl" alt="" class="img-rounded"/></a>
         </div>
     }
 </div>
