@@ -1,5 +1,24 @@
 ﻿@model Domain.Entities.ShopInfo
 
-<h1>@Model.Name</h1>
-<h1>Оформить страницу магазина</h1>
 
+<div class="item"><img src="@Model.Logo" alt="" class="img-responsive"></div>
+
+
+<div class="">
+    <h1>@Model.Name</h1>
+</div>
+
+<div class="text-center">
+    @Model.ShortDescription
+</div>
+
+<div class="">
+
+    @foreach (var text in Model.Description.Split('|'))
+    {
+        @text;
+        <br />
+        <br />
+    }
+
+</div>

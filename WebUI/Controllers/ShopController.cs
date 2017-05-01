@@ -51,7 +51,10 @@ namespace WebUI.Controllers
         {
             var Item = _unitOfWork.GetGenericRepository<ShopInfo>()
                                     .GetAll()
-                                    .FirstOrDefault(x => x.ShopInfoId == itemId);            
+                                    .FirstOrDefault(x => x.ShopInfoId == itemId);
+
+            string pattern = "\n";
+
             return View(Item);
         }
 
