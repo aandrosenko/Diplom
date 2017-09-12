@@ -7,6 +7,7 @@
     <title>@ViewBag.Title – приложение</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -24,11 +25,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Эмблема?? или имя", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Главная страница", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Главная страница", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("Главная страница", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("Каталог магазинов", "Shops", "Shop")</li>
                     <li>@Html.ActionLink("О программе", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
@@ -44,6 +45,20 @@
             <p >&copy; @DateTime.Now.Year – приложение ASP.NET</p>
         </footer>
     </div>
+    
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('.container').each(function () {
+            var highestBox = 0;
+            $('.col-md-4 ', this).each(function () {
+                if ($(this).height() > highestBox) {
+                    highestBox = $(this).height();
+                }
+            });
+            $('.col-md-4 ', this).height(highestBox);
+        });
+    });
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
