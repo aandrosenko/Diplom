@@ -1,9 +1,6 @@
 ﻿using Domain.Abstract;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebUI.Models;
 
@@ -11,23 +8,6 @@ namespace WebUI.Controllers
 {
     public class ShopController : Controller
     {
-        /* private IShopInfoRepository catalogmagazinovRepozitory;
-         // GET: CatalogMagazinov
-
-
-         public CatalogMagazinovController(IShopInfoRepository catalogRepo)
-         {
-
-             catalogmagazinovRepozitory = catalogRepo;
-         }
-
-
-         public ActionResult Catalog()
-         {
-             return View(catalogmagazinovRepozitory.CatalogMagazinov);
-         }*/
-
-
         private IUnitOfWork _unitOfWork;
 
         public ShopController(IUnitOfWork unitOfWork)

@@ -9,6 +9,7 @@ namespace WebUI.Attributes
         public override bool IsValid(object value)
         {
             var user = NinjectWebCommon.Get<IUserHelper>().GetUserByEmail(value.ToString());
+
             return user == null;
         }
     }

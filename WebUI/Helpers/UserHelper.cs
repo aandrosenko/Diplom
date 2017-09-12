@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Domain.Abstract;
 using Domain.Entities;
 using Domain.Repositories;
@@ -33,6 +34,11 @@ namespace WebUI.Helpers
             };
             _userRepo.Add(user);
             _userRepo.Save();
+        }
+
+        public IEnumerable<User> GetUsers()
+        {
+            return _userRepo.GetAll();
         }
     }
 }

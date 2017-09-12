@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebUI.Context
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -29,10 +30,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Главная страница", "Index", "Home")</li>*@
-                    <li>@Html.ActionLink("Каталог магазинов", "Shops", "Shop")</li>
-                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+
+                    @if (UserContext.Current.CurrentUser != null &&
+                         UserContext.Current.CurrentUser.IsAdmin)
+                    {
+                        <li>@Html.ActionLink("Пользователи", "Users", "Admin")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Каталог магазинов", "Shops", "Shop")</li>
+                        <li>@Html.ActionLink("О программе", "About", "Home")</li>
+                        <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
