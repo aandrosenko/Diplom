@@ -13,11 +13,20 @@ namespace WebUI.Controllers
     public class AdminController : Controller
     {
         private IUserHelper _userHelper;
+        private IShopInfoHelper _shopInfoHelper;
 
-        public AdminController(IUserHelper userHelper)
+
+        public AdminController(IUserHelper userHelper, IShopInfoHelper shopInfoHelper)
         {
             _userHelper = userHelper;
+            _shopInfoHelper = shopInfoHelper;
         }
+
+        //public AdminController(IShopInfoHelper shopInfoHelper)
+        //{
+        //    _shopInfoHelper = shopInfoHelper;
+        //}
+
 
         public ViewResult Users()
         {
@@ -25,5 +34,13 @@ namespace WebUI.Controllers
 
             return View(users);
         }
+
+        public ViewResult ShopEditor()
+        {
+            var shops = _shopInfoHelper.GetShopInfo();               
+
+            return View(shops);
+        }
+
     }
 }

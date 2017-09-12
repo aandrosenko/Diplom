@@ -22,6 +22,7 @@ namespace WebUI.Infrastructure
         {
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             _kernel.Bind<IUserHelper>().To<UserHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
+            _kernel.Bind<IShopInfoHelper>().To<ShopInfoHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
         }
 
         public object GetService(Type serviceType)

@@ -7,8 +7,8 @@ namespace WebUI.Models
 {
     public class PagingInfo
     {
-        public int TotalItems { get; set; }     //общее количество книг
-        public int ItemsPerPage { get; set; }   //кол-во книг на странице
+        public int TotalItems { get; set; }     //общее количество 
+        public int ItemsPerPage { get; set; }   //кол-во на странице
         public int CurrentPage { get; set; }    //номер текущей страницы
         public int TotalPages                   //общее количество страниц
         {

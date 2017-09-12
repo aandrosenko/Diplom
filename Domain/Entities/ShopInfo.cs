@@ -20,6 +20,7 @@ namespace Domain.Entities
 
         public virtual ICollection<EventInfo> Events { get; set; }
         public virtual ICollection<ShopReview> Reviews { get; set; }
+        public IEnumerable<ShopInfo> ShopName { get; set; }
         //Адреса с номером телефона
     }
 }
