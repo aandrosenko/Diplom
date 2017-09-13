@@ -14,12 +14,15 @@ namespace WebUI.Controllers
     {
         private IUserHelper _userHelper;
         private IShopInfoHelper _shopInfoHelper;
+        private IEventInfoHelper _eventInfoHelper;
 
 
-        public AdminController(IUserHelper userHelper, IShopInfoHelper shopInfoHelper)
+
+        public AdminController(IUserHelper userHelper, IShopInfoHelper shopInfoHelper, IEventInfoHelper eventInfoHelper)
         {
             _userHelper = userHelper;
             _shopInfoHelper = shopInfoHelper;
+            _eventInfoHelper = eventInfoHelper;
         }
 
         //public AdminController(IShopInfoHelper shopInfoHelper)
@@ -40,6 +43,13 @@ namespace WebUI.Controllers
             var shops = _shopInfoHelper.GetShopInfo();               
 
             return View(shops);
+        }
+
+        public ViewResult EventEditor()
+        {
+            var events = _eventInfoHelper.GetEventInfo();
+
+            return View(events);
         }
 
     }

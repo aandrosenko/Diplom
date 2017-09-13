@@ -36,8 +36,9 @@
                     @if (UserContext.Current.CurrentUser != null &&
                          UserContext.Current.CurrentUser.IsAdmin)
                     {
-                        <li>@Html.ActionLink("Пользователи", "Users", "Admin")</li>
-                        <li>@Html.ActionLink("Магазины", "ShopEditor", "Admin")</li>
+                        <li>@Html.ActionLink("Редактор пользователей", "Users", "Admin")</li>
+                        <li>@Html.ActionLink("Редактор магазинов", "ShopEditor", "Admin")</li>
+                        <li>@Html.ActionLink("Редактор событий", "EventEditor", "Admin")</li>
                     }                   
                 </ul>
                 @Html.Partial("_LoginPartial")

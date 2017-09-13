@@ -17,8 +17,7 @@ namespace WebUI.Models
 
         public PagingInfo PagingInfo { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "FirstNameErrorMessage")]
-        [Display(Name = "Имя")]
-        public string ShopName { get; set; }
+       
+        
     }
 }
