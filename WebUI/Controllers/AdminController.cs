@@ -39,17 +39,24 @@ namespace WebUI.Controllers
         }
 
         public ViewResult ShopEditor()
-        {
+        {           
             var shops = _shopInfoHelper.GetShopInfo();               
 
             return View(shops);
         }
-
+                
         public ViewResult EventEditor()
         {
             var events = _eventInfoHelper.GetEventInfo();
 
             return View(events);
+        }
+        
+        public ActionResult SelectedShopEditor(string name)
+        {
+            var item = _shopInfoHelper.GetShopByName(name);                   
+
+            return View(item);
         }
 
     }
