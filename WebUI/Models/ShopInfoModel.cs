@@ -11,13 +11,15 @@ namespace WebUI.Models
 {
     public class ShopInfoModel
     {
+              
+        public int ShopInfoId { get; set; }        
+        public string Name { get; set; }        
+        public string Logo { get; set; }
+        public string ShortDescription { get; set; }
+        public string Description { get; set; }
+
         public IEnumerable<EventInfo> EventInfos { get; set; }
-
         public IEnumerable<ShopInfo> ShopInfoes { get; set; }
-
         public PagingInfo PagingInfo { get; set; }
-
-       
-        
     }
 }

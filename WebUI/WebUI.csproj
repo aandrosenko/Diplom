@@ -236,6 +236,7 @@
     <Content Include="Views\Admin\ShopEditor.cshtml" />
     <Content Include="Views\Admin\EventEditor.cshtml" />
     <Content Include="Views\Admin\SelectedShopEditor.cshtml" />
+    <Content Include="Views\Admin\CreateNewShop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
