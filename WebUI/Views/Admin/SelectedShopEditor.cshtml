@@ -1,0 +1,36 @@
+﻿@model Domain.Entities.ShopInfo
+@{
+    ViewBag.Title = "SelectedShopEditor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+        @Model.Name
+</div>
+
+<h2>Редактировать @Model.Name</h2>
+<h2>@Model.ShopInfoId</h2>
+
+     
+    @using (Html.BeginForm())
+    {      
+            @Html.LabelFor(model => model.Name, "Название магазина")
+            <br />
+            @Html.EditorFor(model => model.Name)
+            <br /><br />
+            @Html.LabelFor(model => model.ShortDescription, "Краткое описание")
+            <br />
+            @Html.EditorFor(model => model.ShortDescription)
+            <br /><br />
+            @Html.LabelFor(model => model.Description, "Полное описание")
+            <br />
+            @Html.EditorFor(model => model.Description)
+            <br /><br />
+
+            <input type="submit" value="Добавить" />
+        
+    }
+         
+
+
+

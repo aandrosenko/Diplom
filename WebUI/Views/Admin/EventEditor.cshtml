@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Domain.Entities.EventInfo>
+@{
+    ViewBag.Title = "EventEditor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>События</h2>
+
+@foreach (var item in Model)
+{
+    <p>
+        @item.EndDate.ToShortDateString() - @item.StartDate.ToShortDateString()
+        
+
+        @*@item.ShopInfo.Name Почем не могу достучаться???*@
+    </p>
+}
