@@ -75,9 +75,13 @@ namespace WebUI.Helpers
         public void DeleteShopInfo(int modelID)  //Удалить магазин
         {
             //_shopinfoRepo.Remove(model.ShopInfoId);
-
             _shopinfoRepo.Remove(modelID);
             _shopinfoRepo.Save();
         }
+
+
+
+
+
     }
 }

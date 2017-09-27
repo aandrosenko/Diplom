@@ -66,8 +66,8 @@ namespace WebUI.Controllers
             return View(item);
         }
         [HttpPost]
-        public ActionResult SelectedShopEditor(ShopInfo shop)
-        {      
+        public ActionResult SelectedShopEditor(ShopInfo shop) //Почему-то когда добавляю стили перестает передаваться ID редактируемого магазина
+        {                                                     //Наверное надо попробовать переделать все через модель
             if (ModelState.IsValid)
             {
                 _shopInfoHelper.UpdateShopInfo(shop);
@@ -87,9 +87,45 @@ namespace WebUI.Controllers
         //___________________________РАБОТА С СОБЫТИЯМИ
         public ViewResult EventEditor()         
         {
+            //var events = _eventInfoHelper.GetEventInfo();
+            //return View(events);
             var events = _eventInfoHelper.GetEventInfo();
-            return View(events);
+            List<EventInfoModel> b = new List<EventInfoModel>();
+            foreach (var a in events)
+            {
+                b.Add(new EventInfoModel
+                {
+                    StartDate = a.StartDate,
+                    EndDate = a.EndDate,
+                    ShortDescription = a.ShortDescription,
+                    LongDescription = a.LongDescription,
+                    Name = _shopInfoHelper.GetShopById(a.ShopInfoId).Name
+                });
+            }
+            return View(b);
         }
+
+
+        [HttpGet]
+        public ActionResult EventCreateNew()  //Добавить НОВОЕ Событие
+        {
+            return View(new EventInfoModel());
+        }
+        //[HttpPost]
+        //public ActionResult EventCreateNew(EventInfoModel newEvent)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        //_eventInfoHelper.CreateShopInfo(newEvent);
+        //        return RedirectToAction("ShopEditor", "Admin");
+        //    }
+        //    return View(newEvent);
+        //}
+
+
+
+
+
 
     }
 }

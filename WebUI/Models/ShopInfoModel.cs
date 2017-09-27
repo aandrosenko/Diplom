@@ -16,6 +16,8 @@ namespace WebUI.Models
         public string Name { get; set; }        
         public string Logo { get; set; }
         public string ShortDescription { get; set; }
+
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         public IEnumerable<EventInfo> EventInfos { get; set; }
