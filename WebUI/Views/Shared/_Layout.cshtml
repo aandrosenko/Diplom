@@ -14,9 +14,9 @@
 <body>
     <header class="jumbotron subhead" id="overview">
         @*<div class="container">
-            <h1 itemprop="name">тут что то будет</h1>
-            <p itemprop="description" class="lead">И тут что-то будет.</p>
-        </div>*@
+                <h1 itemprop="name">тут что то будет</h1>
+                <p itemprop="description" class="lead">И тут что-то будет.</p>
+            </div>*@
     </header>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -32,39 +32,43 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Каталог магазинов", "Shops", "Shop")</li>
                     @*<li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>*@
+                        <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>*@
                     @if (UserContext.Current.CurrentUser != null &&
-                         UserContext.Current.CurrentUser.IsAdmin)
+                 UserContext.Current.CurrentUser.IsAdmin)
                     {
                         <li>@Html.ActionLink("Редактор пользователей", "Users", "Admin")</li>
                         <li>@Html.ActionLink("Редактор магазинов", "ShopEditor", "Admin")</li>
                         <li>@Html.ActionLink("Редактор событий", "EventEditor", "Admin")</li>
-                    }                   
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p >&copy; @DateTime.Now.Year – приложение ASP.NET</p>
-        </footer>
+    <div class="container body-content">       
+            @RenderBody()         
     </div>
-    
+    <hr />
+        <footer class="">
+            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+        </footer>
+
+   
+
+
+
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('.container').each(function () {
-            var highestBox = 0;
-            $('.col-md-4 ', this).each(function () {
-                if ($(this).height() > highestBox) {
-                    highestBox = $(this).height();
-                }
+        $(document).ready(function () {
+            $('.container').each(function () {
+                var highestBox = 0;
+                $('.col-md-4 ', this).each(function () {
+                    if ($(this).height() > highestBox) {
+                        highestBox = $(this).height();
+                    }
+                });
+                $('.col-md-4 ', this).height(highestBox);
             });
-            $('.col-md-4 ', this).height(highestBox);
         });
-    });
     </script>
 
     @Scripts.Render("~/bundles/jquery")

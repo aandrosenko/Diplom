@@ -86,19 +86,20 @@ namespace WebUI.Controllers
         
         //___________________________РАБОТА С СОБЫТИЯМИ
         public ViewResult EventEditor()         
-        {
-            //var events = _eventInfoHelper.GetEventInfo();
-            //return View(events);
+        {            
             var events = _eventInfoHelper.GetEventInfo();
             List<EventInfoModel> b = new List<EventInfoModel>();
             foreach (var a in events)
             {
                 b.Add(new EventInfoModel
                 {
+                    EventInfoId = a.EventInfoId,
                     StartDate = a.StartDate,
                     EndDate = a.EndDate,
+                    Title = a.Title,
                     ShortDescription = a.ShortDescription,
                     LongDescription = a.LongDescription,
+                    ShopInfoId = a.ShopInfoId,
                     Name = _shopInfoHelper.GetShopById(a.ShopInfoId).Name
                 });
             }
@@ -108,22 +109,34 @@ namespace WebUI.Controllers
 
         [HttpGet]
         public ActionResult EventCreateNew()  //Добавить НОВОЕ Событие
-        {
+        {            
+            SelectList magazin = new SelectList(_shopInfoHelper.GetShopInfo(), "ShopInfoId", "Name");
+            ViewBag.Mag = magazin;            
+
             return View(new EventInfoModel());
         }
-        //[HttpPost]
-        //public ActionResult EventCreateNew(EventInfoModel newEvent)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        //_eventInfoHelper.CreateShopInfo(newEvent);
-        //        return RedirectToAction("ShopEditor", "Admin");
-        //    }
-        //    return View(newEvent);
-        //}
+        [HttpPost]
+        public ActionResult EventCreateNew(EventInfoModel newEvent)
+        {
+            if (ModelState.IsValid)
+            {
+                _eventInfoHelper.CreateNewEvent(newEvent);
+                return RedirectToAction("EventEditor", "Admin");
+            }
+
+            SelectList magazin = new SelectList(_shopInfoHelper.GetShopInfo(), "ShopInfoId", "Name");
+            ViewBag.Mag = magazin;
+
+            return View(newEvent);
+        }
 
 
-
+        public ActionResult DeleteEvent(EventInfoModel model) //УДАЛИТЬ выбранное событие
+        {
+            //_shopInfoHelper.DeleteShopInfo(model.);
+            _eventInfoHelper.DeleteEventInfo(model.EventInfoId);
+            return RedirectToAction("EventEditor", "Admin");
+        }
 
 
 

@@ -11,7 +11,8 @@ namespace WebUI.Helpers
     public interface IEventInfoHelper
     {
         EventInfo GetEventInfoByData(DateTime data);
-        void CreateEventInfo(EventInfoModel model);
+        void CreateNewEvent(EventInfoModel model);
+        void DeleteEventInfo(int modelID);
         IEnumerable<EventInfo> GetEventInfo();
     }
 }

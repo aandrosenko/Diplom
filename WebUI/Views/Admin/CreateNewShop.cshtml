@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Новый магазин</h2>
 
 @using (Html.BeginForm("CreateNewShop", "Admin", FormMethod.Post, new { @class = "form" }))
@@ -30,7 +31,7 @@
         </div>
     </div>
 
-        <input type="submit" value="Добавить" />
+        <input type="submit" class="btn btn-primary" value="Добавить" />
 
 
         }
