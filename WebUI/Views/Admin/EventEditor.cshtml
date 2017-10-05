@@ -37,14 +37,13 @@
                                      <td style="vertical-align:middle">@item.EndDate.ToShortDateString()</td>
                                      <td style="vertical-align:middle">@item.Name</td>
                                      <td style="vertical-align:middle">@item.ShortDescription</td>
-                                     <td style="vertical-align:middle"><button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("", "Admin", new {ShopInfoId = @item.EventInfoId} )'">Редактировать</button></td>
+                                     <td style="vertical-align:middle"><button type="button" class="btn btn-primary btn-sm" onclick="location.href='@Url.Action("SelectedEventEditor", "Admin", new {EventInfoId = @item.EventInfoId} )'">Редактировать</button></td>
                                      <td style="vertical-align:middle"><button type="button" class="btn btn-warning btn-sm" onclick="location.href='@Url.Action("DeleteEvent", "Admin", new {EventInfoId = @item.EventInfoId})'">Удалить</button></td>
                                  </tr>
                              }
                          </tbody>
                      </table>
                  </div>
-
              </div>
          </div>
     </div>

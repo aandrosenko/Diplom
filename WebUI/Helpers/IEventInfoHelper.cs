@@ -13,6 +13,8 @@ namespace WebUI.Helpers
         EventInfo GetEventInfoByData(DateTime data);
         void CreateNewEvent(EventInfoModel model);
         void DeleteEventInfo(int modelID);
+        EventInfo GetEventById(int eventId);
+        void UpdateEventInfo(EventInfo model);
         IEnumerable<EventInfo> GetEventInfo();
     }
 }

@@ -24,7 +24,12 @@ namespace WebUI.Helpers
         {
             return _eventInfoRepo.GetAll().FirstOrDefault(u => u.EndDate.Equals(data));
         }
-                
+
+        public EventInfo GetEventById(int eventId)
+        {
+            return _eventInfoRepo.GetAll().FirstOrDefault(u => u.EventInfoId.Equals(eventId));
+        }
+
         public IEnumerable<EventInfo> GetEventInfo()
         {
             return _eventInfoRepo.GetAll().OrderByDescending(t => t.EndDate);
@@ -47,14 +52,28 @@ namespace WebUI.Helpers
         }
 
 
-        public void DeleteEventInfo(int modelID)  //Удалить магазин
+        public void DeleteEventInfo(int modelID)  //Удалить событие
         {
-            //_shopinfoRepo.Remove(model.ShopInfoId);
-            //_shopinfoRepo.Remove(modelID);
-            //_shopinfoRepo.Save();
             _eventInfoRepo.Remove(modelID);
             _eventInfoRepo.Save();
         }
+
+
+        public void UpdateEventInfo(EventInfo model)
+        {
+            EventInfo editEvent = GetEventById(model.EventInfoId);
+
+            editEvent.StartDate = model.StartDate;
+            editEvent.EndDate = model.EndDate;
+            editEvent.ShopInfoId = model.ShopInfoId;
+            editEvent.Title = model.Title;
+            editEvent.ShortDescription = model.ShortDescription;
+            editEvent.LongDescription = model.LongDescription;
+
+            _eventInfoRepo.Update(editEvent);
+            _eventInfoRepo.Save();
+        }
+
 
 
     }
