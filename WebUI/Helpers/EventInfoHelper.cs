@@ -36,7 +36,7 @@ namespace WebUI.Helpers
         }
 
 
-        public void CreateNewEvent(EventInfoModel model)
+        public void CreateNewEvent(EventInfoModel model) //СОЗДАТЬ новое событие
         {
             var newEvent = new EventInfo()
             {
@@ -52,14 +52,13 @@ namespace WebUI.Helpers
         }
 
 
-        public void DeleteEventInfo(int modelID)  //Удалить событие
+        public void DeleteEventInfo(int modelID)  //УДАЛИТЬ событие
         {
             _eventInfoRepo.Remove(modelID);
             _eventInfoRepo.Save();
         }
 
-
-        public void UpdateEventInfo(EventInfo model)
+        public void UpdateEventInfo(EventInfo model) //РЕДАКТИРОВАТЬ событие
         {
             EventInfo editEvent = GetEventById(model.EventInfoId);
 
@@ -73,8 +72,5 @@ namespace WebUI.Helpers
             _eventInfoRepo.Update(editEvent);
             _eventInfoRepo.Save();
         }
-
-
-
     }
 }

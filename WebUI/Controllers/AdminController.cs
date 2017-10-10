@@ -146,8 +146,8 @@ namespace WebUI.Controllers
             return View(item);
         }
         [HttpPost]
-        public ActionResult SelectedEventEditor(EventInfo editEvent) //Почему-то когда добавляю стили перестает передаваться ID редактируемого магазина
-        {                                                     //Наверное надо попробовать переделать все через модель
+        public ActionResult SelectedEventEditor(EventInfo editEvent) 
+        {                                                     
             if (ModelState.IsValid)
             {
                 _eventInfoHelper.UpdateEventInfo(editEvent);
