@@ -11,8 +11,7 @@ namespace Domain.Entities
         public string Logo { get; set; }
         public string ShortDescription { get; set; }
         public string Description { get; set; }
-
-        [ForeignKey(nameof(Owner))]
+        
         public int UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]

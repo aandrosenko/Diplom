@@ -1,6 +1,5 @@
 ﻿using Domain.Entities;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Domain
 {
@@ -19,7 +18,7 @@ namespace Domain
         {
             modelBuilder.Entity<ShopInfo>()
                         .HasRequired(c => c.Owner)
-                        .WithMany()
+                        .WithMany(u => u.Shops)
                         .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ShopReview>()
