@@ -28,5 +28,7 @@ namespace WebUI.Models
         public int ShopInfoId { get; set; }
         public string Name { get; set; }
         public IEnumerable<EventInfo> EventInfos { get; set; }
+
+        public PagingInfo PagingInfo { get; set; }
     }
 }

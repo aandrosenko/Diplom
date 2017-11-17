@@ -11,7 +11,9 @@
     @foreach (var shop in Model.ShopInfoes)
     {
         <div>
-            <a href="@Url.Action("ShopDescription", "Shop", new { itemId = shop.ShopInfoId })">@shop.Name</a>
+            <h4>
+                <a href="@Url.Action("ShopDescription", "Shop", new { itemId = shop.ShopInfoId })">@shop.Name</a>
+            </h4>
         </div>
     }
 </div>

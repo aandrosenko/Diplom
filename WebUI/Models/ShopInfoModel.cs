@@ -12,7 +12,8 @@ namespace WebUI.Models
     public class ShopInfoModel
     {
               
-        public int ShopInfoId { get; set; }        
+        public int ShopInfoId { get; set; }
+        [Required]
         public string Name { get; set; }        
         public string Logo { get; set; }
         public string ShortDescription { get; set; }

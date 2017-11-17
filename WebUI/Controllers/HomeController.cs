@@ -21,7 +21,7 @@ namespace WebUI.Controllers
             ShopInfoModel model = new ShopInfoModel
             {
                 EventInfos = _unitOfWork.GetGenericRepository<EventInfo>()
-                                        .GetAll()
+                                        .GetAll().Where(a => a.EndDate>= System.DateTime.Now)
                                         .OrderByDescending(t => t.StartDate)
                                         .Skip((page - 1) * pageSize)
                                         .Take(pageSize),
@@ -29,7 +29,7 @@ namespace WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = 0
+                    TotalItems = _unitOfWork.GetGenericRepository<EventInfo>().GetAll().Count()//0
                 }
             };
 

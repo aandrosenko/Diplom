@@ -21,7 +21,7 @@ namespace WebUI.Controllers
             {
                 ShopInfoes = _unitOfWork.GetGenericRepository<ShopInfo>()
                                         .GetAll()
-                                        .OrderByDescending(t => t.Name)                                             
+                                        .OrderBy(t => t.Name)                                             
             };
             return View(model);
         }

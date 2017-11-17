@@ -12,12 +12,9 @@
         <div class="col-md-4">
             <div>
                 <a href="@Url.Action("AboutEvent", "Home", new { itemId = preview.EventInfoId })" class="thumbnail">
+                    @*<div>@preview.ShopInfo.Name</div>*@
                     <img src="@preview.LogoUrl" alt="" class="img-rounded" />
                 </a>
-            </div>
-
-            <div>
-                @preview.ShopInfoId
             </div>
         </div>
     }
