@@ -24,6 +24,7 @@ namespace WebUI.Infrastructure
             _kernel.Bind<IUserHelper>().To<UserHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
             _kernel.Bind<IShopInfoHelper>().To<ShopInfoHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
             _kernel.Bind<IEventInfoHelper>().To<EventInfoHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
+            _kernel.Bind<IEventReviewHelper>().To<EventReviewHelper>().WithConstructorArgument("unitOfWork", _kernel.Get<IUnitOfWork>());
         }
 
         public object GetService(Type serviceType)

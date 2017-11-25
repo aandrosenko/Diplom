@@ -157,6 +157,7 @@
     <Compile Include="Context\UserContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EventReviewController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions\UserExtensions.cs" />
@@ -164,7 +165,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EventInfoHelper.cs" />
+    <Compile Include="Helpers\EventReviewHelper.cs" />
     <Compile Include="Helpers\IEventInfoHelper.cs" />
+    <Compile Include="Helpers\IEventReviewHelper.cs" />
     <Compile Include="Helpers\IShopInfoHelper.cs" />
     <Compile Include="Helpers\IUserHelper.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
@@ -173,6 +176,7 @@
     <Compile Include="HtmlHelpers\PagingHelper.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\EventInfoModel.cs" />
+    <Compile Include="Models\EventReviewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -269,7 +273,9 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\EventReview\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

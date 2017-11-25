@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebUI.BundleConfig">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.FilterConfig" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.RouteConfig" Collapsed="true">
+    <Position X="2.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.MvcApplication" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.App_Start.NinjectWebCommon" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAQACAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\NinjectWebCommon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Attributes.AdminAuthorizeAttribute" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Attributes\AdminAuthorizeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Attributes.UserExistAttribute" Collapsed="true">
+    <Position X="1" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\UserExistAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Attributes.ValidateUserAttribute" Collapsed="true">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAgAAAAAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Attributes\ValidateUserAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Context.ContextManager&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAAAAAAAQABAAAAAAAAAAAAAAACAAAAAAACA=</HashCode>
+      <FileName>Context\ContextManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebUI.Context.UserContext" Collapsed="true">
+    <Position X="9.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Context\UserContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Context.FormsPrincipalUserContext" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIBAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Context\UserContext.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebUI.Controllers.AccountController" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAIAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Controllers.AdminController">
+    <Position X="21.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAACIACAAIQCAAAAAAAAAAAAAAAAEAAAAAAAgAggA=</HashCode>
+      <FileName>Controllers\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Controllers.HomeController">
+    <Position X="19.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEACgAAAAAAAAAAAACAAAEAAAAAABA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Controllers.ShopController">
+    <Position X="23.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Controllers\ShopController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Extensions.UserExtensions" Collapsed="true">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\UserExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Helpers.EventInfoHelper" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAgAAAIAAAAAgAAAAAAQABAAgAAA=</HashCode>
+      <FileName>Helpers\EventInfoHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebUI.Helpers.PasswordHelper" Collapsed="true">
+    <Position X="7.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\PasswordHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Helpers.ShopInfoHelper" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgAAACAACAAAAAgAAAAAAAAAAAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>Helpers\ShopInfoHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebUI.Helpers.UserHelper" BaseTypeListCollapsed="true">
+    <Position X="23.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAggAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Helpers\UserHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebUI.HtmlHelpers.PagingHelper" Collapsed="true">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HtmlHelpers\PagingHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Infrastructure.NinjectDependencyResolver" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACgAAEAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Infrastructure\NinjectDependencyResolver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WebUI.Models.EventInfoModel" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAgAQEAABAAAAAQiAAgAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\EventInfoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Models.LoginViewModel" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAIAAAAgAAA=</HashCode>
+      <FileName>Models\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Models.PagingInfo" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\PagingInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Models.RegisterViewModel" Collapsed="true">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAg=</HashCode>
+      <FileName>Models\RegisterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Models.ShopInfoModel" Collapsed="true">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAAAAggQAAAAAAAAAQAAAgABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ShopInfoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebUI.Properties.Resources" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAABUAAAAQAIAgAQAAAAAAAEgIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WebUI.Context.IContextManager&lt;T&gt;" Collapsed="true">
+    <Position X="0.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Context\IContextManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebUI.Context.IUserContext" Collapsed="true">
+    <Position X="6" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Context\IUserContext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebUI.Helpers.IEventInfoHelper" Collapsed="true">
+    <Position X="2.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAAAAAIAAAAAgAAAAAAQAAAAgAAA=</HashCode>
+      <FileName>Helpers\IEventInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebUI.Helpers.IShopInfoHelper" Collapsed="true">
+    <Position X="4.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgAAACAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>Helpers\IShopInfoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WebUI.Helpers.IUserHelper" Collapsed="true">
+    <Position X="7.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\IUserHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
