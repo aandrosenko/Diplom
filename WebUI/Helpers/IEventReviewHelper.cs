@@ -7,7 +7,7 @@ using WebUI.Models;
 
 namespace WebUI.Helpers
 {
-    interface IEventReviewHelper
+    public interface IEventReviewHelper
     {
         void CreateNewEventReview(EventReviewModel model);
     }

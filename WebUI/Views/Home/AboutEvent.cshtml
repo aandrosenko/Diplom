@@ -1,5 +1,7 @@
 ﻿@model Domain.Entities.EventInfo
+@*@model WebUI.Models.EventInfoModel*@
 @using WebUI.Context
+@using WebUI.Models
 
 <div class="row">
     <div class="col-md-5"><img src="@Model.LogoUrl" alt="" class="img-responsive"></div>
@@ -26,20 +28,11 @@
 <div>
     @if (UserContext.Current.CurrentUser != null)
     {
-        using (Html.BeginForm())
-        {
-            
-            <div class="form-group">
-                @Html.LabelFor(model => model.LongDescription, "Добавить комментарий:", new { @class = "col-md-12 control-label" })
-                <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.LongDescription, new { @class = "col-md-12 form-control ", rows = 5, style = "max-width: 100%; width: 50%; " })
-                </div>
-            </div>
 
-        }
-
-
-
+        @Html.Action("AddNewEventReview", "EventReview", new { eventInf = Model })
+        @*@Html.Action("AddNewEventReview", "EventReview")*@
+    
+    @*@Html.Partial("~/Views/EventReview/AddNewEventReview.cshtml", new EventReviewModel())*@
     }
 
 </div>

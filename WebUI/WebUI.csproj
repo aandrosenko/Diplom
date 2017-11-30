@@ -252,6 +252,7 @@
     <Content Include="Views\Admin\CreateNewShop.cshtml" />
     <Content Include="Views\Admin\EventCreateNew.cshtml" />
     <Content Include="Views\Admin\SelectedEventEditor.cshtml" />
+    <Content Include="Views\EventReview\AddNewEventReview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -273,9 +274,7 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\EventReview\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

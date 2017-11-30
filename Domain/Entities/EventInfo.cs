@@ -23,6 +23,8 @@ namespace Domain.Entities
         public int ShopInfoId { get; set; }
         public ShopInfo ShopInfo { get; set; }
 
+
+
         public virtual ICollection<EventReview> Reviews { get; set; }
     }
 }

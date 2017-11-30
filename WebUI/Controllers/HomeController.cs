@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Domain.Abstract;
 using WebUI.Models;
+using WebUI.Helpers;
 
 namespace WebUI.Controllers
 {
@@ -10,10 +11,12 @@ namespace WebUI.Controllers
     {
         public int pageSize = 15;
         private IUnitOfWork _unitOfWork;
+        private IEventInfoHelper _eventInfoHelper;
 
-        public HomeController(IUnitOfWork unitOfWork)
+        public HomeController(IUnitOfWork unitOfWork, IEventInfoHelper eventInfoHelper)
         {
             _unitOfWork = unitOfWork;
+            _eventInfoHelper = eventInfoHelper;
         }
 
         public ViewResult Index(int page = 1)
@@ -38,9 +41,10 @@ namespace WebUI.Controllers
 
         public ActionResult AboutEvent(int itemId)
         {
-            var Item = _unitOfWork.GetGenericRepository<EventInfo>()
-                                   .GetAll()
-                                   .FirstOrDefault(x => x.EventInfoId == itemId);
+            var Item = _eventInfoHelper.GetEventById(itemId);            
+            //var Item = _unitOfWork.GetGenericRepository<EventInfo>()
+            //                       .GetAll()
+            //                       .FirstOrDefault(x => x.EventInfoId == itemId);
             return View(Item);
         }
 

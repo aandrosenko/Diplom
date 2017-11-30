@@ -1,0 +1,23 @@
+﻿@using WebUI.Models
+@model EventReviewModel
+
+@{
+    ViewBag.Title = "AddNewEventReview";
+  
+}
+
+@using (Html.BeginForm())
+        {            
+            <div class="form-group">
+                @Html.LabelFor(model => model.Text, "Добавить комментарий:", new { @class = "col-md-12 control-label" })                
+                <div class="col-md-12">
+                    @Html.TextAreaFor(model => model.Text, new { @class = "col-md-12 form-control ", rows = 5, style = "max-width: 100%; width: 50%; " })                    
+                </div>
+            </div>
+            @Html.HiddenFor(model => model.EventInfoId)
+
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-primary" value="Добавить" />
+            </div>
+
+}
